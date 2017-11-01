@@ -1,0 +1,99 @@
+
+<!-- ******** HEADER ********** -->
+<section id="home"></section>
+<div id="h">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Welcome To First Rugs and Carpet Online Store</h1>
+        <% if not current_user.present? %>
+          <ul>
+            <li>
+              <%= link_to "Sign Up here", products_path, class: "btn btn-conf btn-green" %>
+            </li>
+          </ul>
+          <%#= link_to 'Gallery', new_product_path %>
+        <% end %>
+        </div>
+      </div>
+    </div><!-- /.container -->
+</div><!--/H -->
+
+<!-- ********** GREEN - SECTION ********** -->
+<div id="g">
+<div class="container">
+ <div class="row">
+   <div class="col-md-4">
+     <i class="ion-ios-paper-outline"></i>
+     <h4>Make your own Gallery </h4>
+     <p>You can make your gallery to show the new or older products</p>
+   </div>
+   <div class="col-md-4">
+     <i class="ion-ios-monitor-outline"></i>
+     <h4>Online Payment</h4>
+     <p>Easy and reliable solution to pay Online</p>
+   </div>
+   <div class="col-md-4">
+     <i class="ion-ios-gear-outline"></i>
+     <h4>Deliver to your place</h4>
+     <p>Easy and fastest solution to deliver or received your order</p>
+   </div>
+ </div><!--/row -->
+</div><!--/container -->
+</div><!--/G -->
+
+<!-- ********** SIDE IMAGE - SECTION ********** -->
+<section id="about"></section>
+<section class="side-image text-heavy clearfix">
+<div class="image-container col-md-5 col-sm-3 pull-left">
+ <div class="background-image-holder">
+   <img class="background-image" alt="Background Image" src="https://st.hzcdn.com/simgs/2001f0150fb2710d_4-9842/farmhouse-living-room.jpg">
+ </div><!--/background-img-holder-->
+</div><!--/img-container-->
+
+<div class="container">
+ <div class="row">
+   <div class="col-md-6 col-md-offset-6 col-sm-8 col-sm-offset-4 content clearfix">
+     <h1>We Are Here to Make Your House More Stylish</h1>
+     <p class="lead">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+     <a href="" class="btn btn-conf btn-green">Purchase Theme</a><br>
+     <div class="col-sm-6 no-pad-left feature">
+       <h5>Awesome Designs</h5>
+       <p>I will put somthings here</p>
+     </div>
+     <div class="col-sm-6 no-pad-left feature">
+       <h5>Awesome Marketing</h5>
+       <p>I will put somethings here</p>
+     </div>
+   </div><!--col-md-6 col-sm-8 -->
+ </div><!-- /row -->
+</div><!--/container -->
+</section><!--Side Image Section -->
+
+<!-- ********** WHITE SECTION - CTA ********** -->
+<section id="contact"></section>
+<div class="container">
+<div class="row mtb2">
+ <div class="col-md-8 col-md-offset-2 centered">
+   <h6>WE ARE AN AWESOME TEAM</h6>
+   <h2 class="bold mb">We are looking for Profesionals<br/>to work with us.</h2>
+   <button class="btn btn-conf btn-green">Join our incredible team</button>
+ </div>
+</div><!--/row -->
+</div><!--/container -->
+
+<!-- ********** FOOTER ********** -->
+<div id="f">
+<div class="container">
+ <div class="row">
+   <div class="col-md-8 col-md-offset-2 centered">
+     <h5>RUGSONLINE@RUGSONLINE.COM | +61 9876 543 21 </h5>
+     <p class="mt">
+       <a href="#"><i class="ion-social-twitter"></i></a>
+       <a href="#"><i class="ion-social-instagram"></i></a>
+       <a href="#"><i class="ion-social-dribbble"></i></a>
+     </p>
+   </div>
+ </div>
+</div>
+</div><!--/F -->
