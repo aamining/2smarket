@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: aliali
+  api_key: '854567715169863'
+  api_secret: necrJxcMgBnvjQseLMCrz7YfvSs
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: aliali
+  api_key: '854567715169863'
+  api_secret: necrJxcMgBnvjQseLMCrz7YfvSs
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: aliali
+  api_key: '854567715169863'
+  api_secret: necrJxcMgBnvjQseLMCrz7YfvSs
+  enhance_image_tag: true
+  static_image_support: false
