@@ -1,13 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-
 <% @products.each do |product| %>
 <div class="container">
   <div class="flex-block">
     <%=image_tag(product.image_url, class: "img-responsive")%>
-
     <%= link_to '🏞 ', product_path(product.id) %>
   </div>
-
 </div>
 <% end %>

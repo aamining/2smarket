@@ -17,7 +17,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'cloudinary'
-
+gem 'searchkick'
 gem 'geocoder'
 gem 'devise-bootstrap-views'
 
