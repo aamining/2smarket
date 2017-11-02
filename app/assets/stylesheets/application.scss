@@ -1,0 +1,18 @@
+// bootstrap
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// font awesome
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// other files
+@import "home.scss";
+@import "products.scss";
+@import "profiles.scss";
+@import "scaffolds.scss";
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden
+}
