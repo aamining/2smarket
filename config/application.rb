@@ -18,6 +18,6 @@ module ProjectRailsThree
     # show rails asset pipeline where vendor assets are located
     # http://makandracards.com/makandra/8951-rails-asset-pipeline-how-to-organize-stylesheets-in-sub-folders
     # config.assets.paths += Dir["#{Rails.root}/vendor/assets/*"].sort_by { |dir| -dir.size }
-    config.assets.paths << Rails.root.join("vendor/assets/themesumo")
+    # config.assets.paths << Rails.root.join("vendor/assets/themesumo")
   end
 end
