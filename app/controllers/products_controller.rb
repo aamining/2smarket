@@ -4,13 +4,13 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    puts "params: #{params.inspect}"
+
     if params[:term].present?
       @products = Product.search(params[:term])
-      puts "search: #{@products.inspect}"
+
     else
       @products = Product.all
-      puts "all: #{@products.inspect}"
+
     end
   end
 
@@ -76,6 +76,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:description, :price, :image, :user_id, :term)
+      params.require(:product).permit(:description, :price, :image, :user_id)
     end
   end
