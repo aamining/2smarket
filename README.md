@@ -65,3 +65,14 @@ localhost:9200
 <% end %>
 
 ```
+9- In Navbar Using the following structure able to see in certain page (Products page).
+
+```
+<% if current_page?(products_path) %>
+    <%= form_tag(products_path, method: :get) do %>
+      <%= text_field_tag :term %>
+      <%= submit_tag 'Search' %>
+    <% end %>
+<% end %>
+
+```

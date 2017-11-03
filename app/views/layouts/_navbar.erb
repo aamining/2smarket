@@ -10,9 +10,11 @@
       <a class="navbar-brand" href="#">Rugs Online</a>
     </div>
 
-    <%= form_tag(products_path, method: :get) do %>
-      <%= text_field_tag :term %>
-      <%= submit_tag 'Search' %>
+    <% if current_page?(products_path) %>
+        <%= form_tag(products_path, method: :get) do %>
+          <%= text_field_tag :term %>
+          <%= submit_tag 'Search' %>
+        <% end %>
     <% end %>
 
     <div class="collapse navbar-collapse">
