@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" style="margin-top: 20px; text-align: center;"><%= notice %></p>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-12">
@@ -13,7 +13,7 @@
             <strong>Price ($):</strong>
             <%= @product.price %>
           </p>
-          <li><%#= link_to 'Payment', new_charge_path %></li>
+          <li><%= link_to 'Add to Cart', order_charge_path(@product.id), :method => :get %></li>
           <li><%= link_to 'Back', products_path %></li>
           <li><%= link_to 'EDIT', edit_product_path%></li>
 

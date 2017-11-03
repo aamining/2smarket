@@ -23,6 +23,10 @@
         <!-- <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li> -->
         <li><a  href="/products">Gallery</a></li>
+        <% if current_page?(products_path) %>
+        <li><a  href=" /products/new">Sell</a></li>
+        <li><%= link_to 'Cart', orders_path %></li>
+        <% end %>
         <% if current_user.present? %>
         <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete%></li>
         <% end %>
