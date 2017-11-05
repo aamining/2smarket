@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Cart</h1>
+<%= puts current_user.id%>
 
-<%= link_to 'Buy', order_purchase_path %>
+<%# if current_user.id == @orders.user_id %>
+
 
 <br><br>
 
@@ -29,5 +31,7 @@
 </table>
 
 <!-- <br> -->
+<%= link_to 'Buy', order_purchase_path %>
 
+<%# end %>
 <%#= link_to 'New Order', new_order_path %>
