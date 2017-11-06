@@ -4,23 +4,28 @@
     <div class="col-sm-12 col-md-12">
       <div class="thumbnail">
         <div class="caption">
-          <td><%= image_tag(@product.image_url) %></td>
-          <p>
+          <%if Profile.exists?(user_id: current_user.id)%>
+            <%# if current_user.profile.exists? %>
+            <td><%= image_tag(@product.image_url) %></td>
+            <p>
             <strong>Description:</strong>
             <%= @product.description %>
-          </p>
-          <p>
+            </p>
+            <p>
             <strong>Price ($):</strong>
             <%= @product.price %>
-          </p>
-          <%unless current_user.id == @product.user_id %>
-          <li><%= link_to 'Add to Cart', order_charge_path(@product.id), :method => :get %></li>
-          <% end %>
-          <li><%= link_to 'Back', products_path %></li>
-          <%if current_user.id == @product.user_id %>
-          <li><%= link_to 'EDIT', edit_product_path%></li>
-          <% end %>
+            </p>
+            <%unless current_user.id == @product.user_id %>
+              <li><%= link_to 'Add to Cart', order_charge_path(@product.id), :method => :get %></li>
+            <% end %>
+            <li><%= link_to 'Back', products_path %></li>
+            <%if current_user.id == @product.user_id %>
+              <li><%= link_to 'EDIT', edit_product_path%></li>
+            <% end %>
 
+            <%else%>
+            <li><%= link_to 'Please click here to complete your user profile to access for details and purchase', new_profile_path %></li>
+          <% end %>
         </div>
       </div>
     </div>

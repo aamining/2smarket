@@ -1,17 +1,6 @@
 <p id="notice"><%= notice %></p>
-<!-- <% if current_user = false%>
-<%= link_to "Create new profile ", new_profile_path %>
-<% else %>
-<%= link_to "Welcome #{} and thank you for signing up. Please click here to continue to Gallery ", products_path %>
-<% end %> -->
-
-
-<!-- <%= link_to "Welcome #{} and thank you for signing up. Please click here to continue to Gallery ", products_path %>
-<% if not current_user.profile.exist? %>
-<%= link_to "Create new profile ", new_profile_path %>
-<% end %> -->
-<h1>Profiles</h1> -->
-
+<h1>Profiles</h1>
+<%if Profile.exists?(user_id: current_user.id)%>
  <table>
   <thead>
     <tr>
@@ -47,9 +36,10 @@
         <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+<%else%>
+<li><%= link_to 'Please click here to complete your user profile to access for details and purchase', new_profile_path %></li>
+<%end%>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to "Welcome #{} and thank you for signing up. Please click here to continue to Gallery ", products_path %> 

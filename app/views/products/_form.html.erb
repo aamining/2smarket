@@ -1,16 +1,21 @@
 <div class="container">
-  <%= simple_form_for(@product) do |f| %>
-    <%= f.error_notification %>
+  
+    <%if Profile.exists?(user_id: current_user.id)%>
+      <%= simple_form_for(@product) do |f| %>
+        <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :description %>
-      <%= f.input :price %>
-      <%= f.input :image, as: :file %>
-    </div>
+        <div class="form-inputs">
+          <%= f.input :description %>
+          <%= f.input :price %>
+          <%= f.input :image, as: :file %>
+        </div>
 
-    <div class="form-actions">
-      <%= f.button :submit %>
-    </div>
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+      <%else%>
+
+    <li><%= link_to 'Please click here to complete your user profile to access for details and purchase', new_profile_path %></li>
   <% end %>
-
 </div>

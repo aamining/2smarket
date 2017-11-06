@@ -26,10 +26,12 @@
         <% if current_page?(products_path) %>
         <li><a  href=" /products/new">Sell</a></li>
         <li><%= link_to 'Cart', orders_path %></li>
-        <% end %>
+        <%end%>
+
         <% if current_user.present? %>
+        <li><%= link_to 'Your Profile', profiles_path%></li>
         <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete%></li>
-        <% end %>
+        <%end%>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
