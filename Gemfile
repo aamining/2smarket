@@ -48,10 +48,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
-  #gem 'capybara'
+  gem 'rspec-rails', '~>3.6'
+  # gem "factory_girl_rails", '~>4.8.0'
+  # gem 'factory_girl_rails'
   gem 'guard-rspec'
+  gem 'factory_bot_rails'
 
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

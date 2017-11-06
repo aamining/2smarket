@@ -42,16 +42,25 @@ Customers are calling out for mobile apps because they quickly connect them to b
 
 # User stories
 1- Users want to sign in easily buy rug(s) or put rug(s) to sell.
+
 2- users want to search/filter and see available products in full detail.
-3- Users want to see the invoice and pay online for item(s)
+
+3- Users want to see the invoice and pay online for item(s).
+
 4- Users want products to be delivered in their place.
 
 
 # Wireframes
 
-
+<p align="center">
+  <img src="https://github.com/aamining/2smarket/blob/master/Wireframe.jpg" width="100%" heigth="100%"/>
+</p>
 
 # ERD (entity relationship diagram)
+
+<p align="center">
+  <img src="https://github.com/aamining/2smarket/blob/master/ERD.png" width="100%" heigth="100%"/>
+</p>
 
 # Design (figma, fonts, colours)
 
@@ -139,6 +148,13 @@ localhost:9200
 
 # How to Set up Rspec
 
+reference:
+
+```
+https://relishapp.com/rspec/rspec-rails/v/3-7/docs/gettingstarted
+
+```
+
 1- Add in dev.test
 
 ```
@@ -147,5 +163,12 @@ gem 'rspec-rails'
 gem 'factory_girls_rails'       to replace fixture
 gem 'capybara'   ?               for simulating user_id
 gem 'guard-rspec'               Guard::RSpec allows to automatically &           intelligently launch specs when files are modified.
+
+```
+
+2-
+
+```
+rails generate rspec:install
 
 ```
