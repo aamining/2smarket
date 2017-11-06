@@ -183,9 +183,6 @@ https://github.com/plataformatec/devise/wiki/How-Tos
 
 https://github.com/plataformatec/devise/wiki/How-To:-Test-controllers-with-Rails-3-and-4-%28and-RSpec%29
 ```
-# Scope of work:
-
-This is a simple Art Gallery app. Able to put art pictures and sell them.
 
 # Buyer would be able to pay online
 
