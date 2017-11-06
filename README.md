@@ -160,9 +160,10 @@ https://relishapp.com/rspec/rspec-rails/v/3-7/docs/gettingstarted
 ```
 gem 'rspec-rails'
 
-gem 'factory_girls_rails'       to replace fixture
-gem 'capybara'   ?               for simulating user_id
-gem 'guard-rspec'               Guard::RSpec allows to automatically &           intelligently launch specs when files are modified.
+gem 'factory_girls_rails'  to replace fixture
+gem 'capybara'   ?         for simulating user_id
+gem 'guard-rspec'          Guard::RSpec allows to automatically &                          intelligently launch specs when files are modified.
+gem 'factory_bot_rails'
 
 ```
 
@@ -171,4 +172,14 @@ gem 'guard-rspec'               Guard::RSpec allows to automatically &          
 ```
 rails generate rspec:install
 
+```
+
+some useful links
+
+```
+http://rspec.info/documentation/
+
+https://github.com/plataformatec/devise/wiki/How-Tos
+
+https://github.com/plataformatec/devise/wiki/How-To:-Test-controllers-with-Rails-3-and-4-%28and-RSpec%29
 ```

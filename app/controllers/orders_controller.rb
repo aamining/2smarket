@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if @order.save
         format.html { redirect_to orders_path(params[:product_id]), notice: 'Order was successfully created.' }
-        # format.json { render :show, status: :created, location: @order }
+        format.json { render :show, status: :created, location: @order }
       else
         puts "---- errors: #{@order.errors.inspect}"
         format.html { redirect_to product_path(params[:product_id]), notice: 'Order error.' }

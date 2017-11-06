@@ -3,5 +3,5 @@ class Product < ApplicationRecord
   mount_uploader :image, ProductImageUploader
 
   searchkick
-  
+
 end

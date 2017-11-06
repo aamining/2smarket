@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Cart</h1>
-<%= puts current_user.id%>
-
-<%# if current_user.id == @orders.user_id %>
+<%#= puts current_user.id%>
 
 
 <br><br>
@@ -19,12 +17,14 @@
 
   <tbody>
     <% @orders.each do |order| %>
+      <% if current_user.id == order.user_id %>
       <tr>
         <td><%= order.user %></td>
         <td><%= order.product %></td>
-        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Show', order %></td> 
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove from Cart', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end %>
       </tr>
     <% end %>
   </tbody>
@@ -33,5 +33,5 @@
 <!-- <br> -->
 <%= link_to 'Buy', order_purchase_path %>
 
-<%# end %>
+
 <%#= link_to 'New Order', new_order_path %>
