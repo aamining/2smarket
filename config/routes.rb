@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :products
   resources :profiles
   devise_for :users
+  resources :charges
   root 'home#index'
 
 

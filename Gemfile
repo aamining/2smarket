@@ -19,6 +19,8 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'searchkick'
 gem 'geocoder'
+gem 'stripe'
+gem 'figaro'
 gem 'devise-bootstrap-views'
 
 # Use sqlite3 as the database for Active Record
