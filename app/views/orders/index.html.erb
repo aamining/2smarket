@@ -1,38 +1,56 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+
 
 <h1>Cart</h1>
 <%=current_user.email%>
-
-
 <br><br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Product #</th>
-      <th>Product</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
-      <% if current_user.id == order.user_id %>
+  <table>
+    <thead>
       <tr>
-        <td><%= order.product.id %></td>
-        <td><%= order.product.price %></td>
-        <%x = order.product.price%>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Remove from Cart', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <%end %>
+        <th>Product #</th>
+        <th>User ID</th>
+        <th>Price</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<!-- <br> -->
-<%= link_to 'Buy', new_charge_path %>
+    <tbody>
+      <% @current_user_orders.each do |order| %>
+          <tr>
+          <td><%= order.product.id %> |</td>
+          <td><%= order.user.id %> |</td>
+          <td>$<%= order.product.price %> |</td>
+          <td><%= link_to 'Show', order %> |</td>
+          <td><%= link_to 'Edit', edit_order_path(order) %>|</td>
+          <td><%= link_to 'Remove from Cart', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
+  <%= form_tag order_payment_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Total: $<%= @order_total %></span>
+      </label>
+    </article>
 
-<%#= link_to 'New Order', new_order_path %>
+  <!-- <br> -->
+  <%#= link_to 'Buy', new_charge_path %>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="Purchase order"
+            data-amount="<%= @order_total*100 %>"
+            data-locale="auto"></script>
+
+  <% end %>
+  <%#= link_to 'New Order', new_order_path %>
+</div>

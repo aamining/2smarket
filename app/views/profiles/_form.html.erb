@@ -1,3 +1,6 @@
+<div class="container">
+
+
 <%= form_with(model: profile, local: true) do |form| %>
   <% if profile.errors.any? %>
     <div id="error_explanation">
@@ -56,9 +59,10 @@
     <%= form.text_field :postcode, id: :profile_postcode %>
   </div>
 
-  
+
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+</div>

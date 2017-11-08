@@ -22,6 +22,7 @@ gem 'geocoder'
 gem 'stripe'
 gem 'figaro'
 gem 'devise-bootstrap-views'
+gem 'mailgun-ruby'
 
 # Use sqlite3 as the database for Active Record
 

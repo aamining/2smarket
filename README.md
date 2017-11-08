@@ -294,3 +294,88 @@ include Cloudinary::CarrierWave
 ```
 
 4- now have a look at Cloudinay dashboard. picture should be there.
+
+# How to send an Email with mailgun
+
+1- need to signup in mailgun website to get API keys
+
+'''
+https://www.mailgun.com
+
+'''
+
+a useful site is:
+
+```
+https://www.leemunroe.com/send-automated-email-ruby-rails-mailgun/
+
+```
+
+2- Adding gem file and bundle install
+
+```
+gem 'mailgun-ruby', '~>1.1.6'
+
+```
+3- Ruby on Rails Action Mailer
+
+'''
+
+rails g mailer model_mailer new_record_notification
+
+'''
+model_mailer is the name of the mailer and new_record_notifcation is the method.
+
+Notice this creates a bunch of files.
+
+- model\_mailer.rb is where the logic will go for sending email and
+
+- new\_record\_notification.text.erb is the content of the email that will be sent.
+
+4- Now open up config/environments/development.rb and add:
+
+'''
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :authentication => :plain,
+  :address => "smtp.mailgun.org",
+  :port => 587,
+  :domain => "MYDOMAIN.mailgun.org",
+  :user_name => "postmaster@MYDOMAIN.mailgun.org",
+  :password => "MYPASSWORD"
+}
+
+'''
+
+5- Now, need to replace MYDOMAIN by Mailgun subdomain from domain section of mailgun website.
+
+
+6- in app>mailers>application_mailer.rb replace default from email:
+
+'''
+default from: "me@MYDOMAIN.com"
+
+'''
+7- Create a view template (content) for the email
+
+in : app/views/model\_mailer/new\_record\_notification.text.erb
+
+```
+Hi,
+
+A new record has been added: <%= @record.name %>
+
+Thanks
+
+```
+8- Send the email:
+
+Last thing to do is to call the email method from your controller.
+
+Whenever you want to send this email, in this case when a new record is created,
+
+call this mailer method:
+
+'''
+
+'''

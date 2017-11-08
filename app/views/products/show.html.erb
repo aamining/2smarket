@@ -16,8 +16,11 @@
             <%= @product.price %>
             </p>
             <%unless current_user.id == @product.user_id %>
-              <li><%= link_to 'Add to Cart', order_charge_path(@product.id), :method => :get %></li>
+            <li><%= link_to 'Add to Cart', order_charge_path(@product.id), :method => :get %></li>
             <% end %>
+             <!-- need to work on -->
+              <!-- <li><%#= link_to 'Add to Cart', edit_order_path(product_id: @product.id, weather: 'sunny'), :method => :get %></li> -->
+
             <li><%= link_to 'Back', products_path %></li>
             <%if current_user.id == @product.user_id %>
               <li><%= link_to 'EDIT', edit_product_path%></li>
