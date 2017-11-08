@@ -53,22 +53,26 @@ Customers are calling out for mobile apps because they quickly connect them to b
 # Wireframes
 
 <p align="center">
-  <img src="https://github.com/aamining/2smarket/blob/master/Wireframe.jpg" width="100%" heigth="100%"/>
+  <img src="https://github.com/aamining/2smarket/blob/master/app/assets/images/Wireframe.jpg" width="100%" heigth="100%"/>
 </p>
 
 # ERD (entity relationship diagram)
 
 <p align="center">
-  <img src="https://github.com/aamining/2smarket/blob/master/ERD.png" width="100%" heigth="100%"/>
+  <img src="https://github.com/aamining/2smarket/blob/master/app/assets/images/ERD.png" width="100%" heigth="100%"/>
 </p>
 
 # Flowchart
 
 <p align="center">
-  <img src="https://github.com/aamining/2smarket/blob/master/ERD.png" width="100%" heigth="100%"/>
+  <img src="https://github.com/aamining/2smarket/blob/master/app/assets/images/Flowchart.jpg" width="100%" heigth="100%"/>
 </p>
 
 # Design (figma, fonts, colours)
+
+<p align="center">
+  <img src="https://github.com/aamining/2smarket/blob/master/app/assets/images/canvas.png" width="100%" heigth="100%"/>
+</p>
 
 
 
