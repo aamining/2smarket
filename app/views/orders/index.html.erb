@@ -19,11 +19,11 @@
     <tbody>
       <% @current_user_orders.each do |order| %>
           <tr>
-          <td><%= order.product.id %> |</td>
-          <td><%= order.user.id %> |</td>
-          <td>$<%= order.product.price %> |</td>
-          <td><%= link_to 'Show', order %> |</td>
-          <td><%= link_to 'Edit', edit_order_path(order) %>|</td>
+          <td><%= order.product.id %> </td>
+          <td><%= order.user.id %> </td>
+          <td>$<%= order.product.price %> </td>
+          <td><%= link_to 'Show', order %> </td>
+          <td><%= link_to 'Edit', edit_order_path(order) %></td>
           <td><%= link_to 'Remove from Cart', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
@@ -42,9 +42,8 @@
       </label>
     </article>
 
-  <!-- <br> -->
-  <%#= link_to 'Buy', new_charge_path %>
 
+    <!-- # the folow codes came from stripe, view>charges -->
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-description="Purchase order"
@@ -52,5 +51,5 @@
             data-locale="auto"></script>
 
   <% end %>
-  <%#= link_to 'New Order', new_order_path %>
+  
 </div>

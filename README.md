@@ -234,6 +234,7 @@ SECRET_KEY: "sk_test_4YzPw8C6g6Bpidz7sQQkLb"
 
 ```
 
+6- then we need to add the following from
 # Deploying to Heroku
 
 ```
@@ -246,6 +247,33 @@ git push heroku master
 heroku open
 
 ```
+7- need to following code 'as a button' from 'view>charges>new.html.erb' to put in relevant view to get data amount.
+
+```
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="A month's subscription"
+        data-amount="100"
+        data-locale="auto"></script>
+
+```
+# How to get a cumulative sum (in this project the total price of all irems in a current user card):
+
+By map:
+
+The map method can be used to create a new array based on the original array, but with the values modified by the supplied block:
+
+referrence:
+
+https://ruby-doc.org/core-2.2.0/Array.html
+
+try this at consul:
+
+[2, 4, 6, 8, 10].map {|a|2*a}
+
+in this exercise to find the sum of items in card :
+
+orders.map { |order| order.product.price }.sum
 
 # How to Upload and Work with images in Heroku (Cloudinary)
 
