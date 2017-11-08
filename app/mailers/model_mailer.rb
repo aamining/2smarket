@@ -1,19 +1,15 @@
 class ModelMailer < ApplicationMailer
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.model_mailer.new_record_notification.subject
-  #
-#   def new_record_notification
-#     @greeting = "Hi"
-#
-#     mail to: "to@example.org"
-#   end
-#
+  default from: "aamining@gmail.com.com"
 
-  def new_record_notification(record)
-    @record = record
-    mail to: "recipient@MYDOMAIN.com", subject: "Success! You did it."
+ def sample_email(user)
+    @user = user
+    mg_client = Mailgun::Client.new ENV['api_key']
+    message_params = {:from    => ENV['gmail_username'],
+                      :to      => @user.email,
+                      :subject => 'Sample Mail using Mailgun API',
+                      :text    => 'This mail is sent using Mailgun API via mailgun-ruby'}
+    mg_client.send_message ENV['domain'], message_params
   end
+
 end

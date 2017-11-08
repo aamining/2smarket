@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  post '/orders/payment', to: 'payments#create', as: 'order_payment' 
+  post '/orders/payment', to: 'payments#create', as: 'order_payment'
 
 
 
