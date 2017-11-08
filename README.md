@@ -62,9 +62,15 @@ Customers are calling out for mobile apps because they quickly connect them to b
   <img src="https://github.com/aamining/2smarket/blob/master/ERD.png" width="100%" heigth="100%"/>
 </p>
 
+# Flowchart
+
+<p align="center">
+  <img src="https://github.com/aamining/2smarket/blob/master/ERD.png" width="100%" heigth="100%"/>
+</p>
+
 # Design (figma, fonts, colours)
 
-# Models
+
 
 
 # How to set up a Search Engine For Products database by GEM SEARCHKICK Step By steps
