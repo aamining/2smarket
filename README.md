@@ -234,7 +234,16 @@ SECRET_KEY: "sk_test_4YzPw8C6g6Bpidz7sQQkLb"
 
 ```
 
-6- then we need to add the following from
+6- need to following code 'as a button' from 'view>charges>new.html.erb' to put in relevant view to get data amount.
+
+```
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description="A month's subscription"
+        data-amount="100"
+        data-locale="auto"></script>
+
+```
 # Deploying to Heroku
 
 ```
@@ -247,16 +256,7 @@ git push heroku master
 heroku open
 
 ```
-7- need to following code 'as a button' from 'view>charges>new.html.erb' to put in relevant view to get data amount.
 
-```
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-        data-description="A month's subscription"
-        data-amount="100"
-        data-locale="auto"></script>
-
-```
 # How to get a cumulative sum (in this project the total price of all irems in a current user card):
 
 By map:
