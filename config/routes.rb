@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get '/orders/product/:product_id', to: 'orders#charge', as: 'order_charge' # order_charge_path
+  get '/orders/product/:product_id', to: 'orders#charge', as: 'order_charge'
+
+  get 'contact' => 'static_pages#contact'
+  # order_charge_path
   # get '/orders/purchase', to: 'orders#purchase', as: 'order_purchase' # order_purchase_path
   # need too work on:
   # resources :orders, only: [ :index, :show ]
@@ -8,6 +11,7 @@ Rails.application.routes.draw do
   resources :products
   resources :profiles
   devise_for :users
+
 
   root 'home#index'
 

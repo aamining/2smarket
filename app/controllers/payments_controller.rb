@@ -1,4 +1,5 @@
 class PaymentsController < ApplicationController
+
   def create
     @current_user_orders = Order.current_user_orders(current_user)
     @order_total = Order.total(@current_user_orders)
@@ -16,8 +17,9 @@ class PaymentsController < ApplicationController
       :currency    => 'usd'
     )
 
-  rescue Stripe::CardError => e
+    rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to orders_path
   end
+
 end

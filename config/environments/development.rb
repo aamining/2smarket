@@ -5,7 +5,7 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -13,15 +13,12 @@ config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :authentication => :plain,
-    :address => "smtp.mailgun.org",
-    :port => 587,
-    :domain => "MYDOMAIN.mailgun.org",
-    :user_name => "postmaster@MYDOMAIN.mailgun.org",
-    :password => "c235285e30ee13466a68fb1af2f2d309"
-  }
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+		api_key: '<mailgun api key>',
+		domain: '<mailgun domain>'
+}
+
 
   if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
