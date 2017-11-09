@@ -1,38 +1,41 @@
-<p id="notice" style="margin-top: 20px; text-align: center;"><%= notice %></p>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-12">
-      <div class="thumbnail">
-        <div class="caption">
-          <%if Profile.exists?(user_id: current_user.id)%>
-            <%# if current_user.profile.exists? %>
-            <td><%= image_tag(@product.image_url) %></td>
-            <p>
-            <strong>Description:</strong>
-            <%= @product.description %>
-            </p>
-            <p>
-            <strong>Price ($):</strong>
-            <%= @product.price %>
-            </p>
-            <%unless current_user.id == @product.user_id %>
-            <li><%= link_to 'Add to Cart', order_charge_path(@product.id), :method => :get %></li>
-            <!-- <li> <%#= link_to'Contact',contact_path %> </li> -->
+<div class="show">
+  <div class="container">
+  <p id="notice" style="margin-top: 20px; text-align: center;"><%= notice %></p>
+    <div class="row">
+      <div class="col-sm-12 col-md-12">
+        <div class="thumbnail">
+          <div class="caption">
+            <%if Profile.exists?(user_id: current_user.id)%>
+              <%# if current_user.profile.exists? %>
+              <td><%= image_tag(@product.image_url) %></td>
+              <p>
+              <strong>Description:</strong>
+              <%= @product.description %>
+              </p>
+              <p>
+              <strong>Price ($):</strong>
+              <%= @product.price %>
+              </p>
+              <%unless current_user.id == @product.user_id %>
+              <li><%= link_to 'Add to Cart', order_charge_path(@product.id), :method => :get %></li>
+              <!-- <li> <%#= link_to'Contact',contact_path %> </li> -->
 
+              <% end %>
+               <!-- need to work on -->
+                <!-- <li><%#= link_to 'Add to Cart', edit_order_path(product_id: @product.id, weather: 'sunny'), :method => :get %></li> -->
+
+              <li><%= link_to 'Back', products_path %></li>
+              <%if current_user.id == @product.user_id %>
+                <li><%= link_to 'EDIT', edit_product_path%></li>
+              <% end %>
+
+              <%else%>
+              <li><%= link_to 'Please click here to complete your user profile to access for details and purchase', new_profile_path %></li>
             <% end %>
-             <!-- need to work on -->
-              <!-- <li><%#= link_to 'Add to Cart', edit_order_path(product_id: @product.id, weather: 'sunny'), :method => :get %></li> -->
-
-            <li><%= link_to 'Back', products_path %></li>
-            <%if current_user.id == @product.user_id %>
-              <li><%= link_to 'EDIT', edit_product_path%></li>
-            <% end %>
-
-            <%else%>
-            <li><%= link_to 'Please click here to complete your user profile to access for details and purchase', new_profile_path %></li>
-          <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>
