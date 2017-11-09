@@ -21,5 +21,7 @@ class PaymentsController < ApplicationController
     flash[:error] = e.message
     redirect_to orders_path
   end
-
+  def payment_params
+    params.require(:payment).permit(:order_id)
+  end
 end

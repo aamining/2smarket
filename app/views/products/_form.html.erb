@@ -1,6 +1,5 @@
-<div class="new">
+<div class="new" style="">
   <div class="container">
-
       <%if Profile.exists?(user_id: current_user.id)%>
         <%= simple_form_for(@product) do |f| %>
           <%= f.error_notification %>
