@@ -35,6 +35,7 @@ body {
 }
 
 .container {
+  padding-top: 0px;
    display: flex;
    flex-direction: row;
    justify-content: space-between;
@@ -67,7 +68,7 @@ body {
 @media screen and(max-width: 1020px) {
    .container {
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
@@ -81,7 +82,7 @@ body {
 @media screen and(max-width: 858px) {
    .container {
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
    justify-content: center;
    align-items: center;
    flex-wrap: wrap;
