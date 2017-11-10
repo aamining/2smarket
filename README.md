@@ -77,7 +77,7 @@ Customers are calling out for mobile apps because they quickly connect them to b
 
 
 
-# How to set up a Search Engine For Products database by GEM SEARCHKICK Step By steps
+# How to set up a Search bar For Products database by GEM SEARCHKICK Step By steps
 
 1- Install Elasticsearch. For Homebrew, use:
 
