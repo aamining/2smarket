@@ -1,12 +1,14 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+
   # GET /products
   # GET /products.json
   def index
 
     if params[:term].present?
       @products = Product.search(params[:term])
+
 
     else
       @products = Product.all
@@ -17,6 +19,8 @@ class ProductsController < ApplicationController
     # GET /products/1
     # GET /products/1.json
     def show
+      # to be able to see(show) @profile.latitude from profile database (table) here in products we need to add it to products, show controller
+      @profile = Profile.find_by(user_id: current_user.id)
     end
 
     # GET /products/new

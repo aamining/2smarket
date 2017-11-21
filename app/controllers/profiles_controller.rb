@@ -1,10 +1,10 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
-
   # GET /profiles
   # GET /profiles.json
   def index
     @profiles = Profile.all
+
   end
 
   # GET /profiles/1
@@ -70,6 +70,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:name, :surname, :phone, :mobile, :street_number, :addressline_1, :suburb, :state, :postcode, :user_id)
+      params.require(:profile).permit(:name, :surname, :phone, :mobile, :street_number, :addressline_1, :suburb, :state, :postcode, :latitude, :longitude, :user_id)
     end
 end
