@@ -16,7 +16,7 @@
               <strong>Price ($):</strong>
               <%= @product.price %>
               </p>
-              <!-- to be able to see(show) @profile.latitude from profile database (table) here in products we need to add it to products, show controller... the relative geocoder codes are in profile model file-->
+              <!-- to be able to see(show) @profile.latitude from profile database (table) here in products we need to add it to products, show controller... the relavant geocoder codes are in profile model file-->
               <li><%=image_tag"https://maps.googleapis.com/maps/api/staticmap?zoom=11&size=600x500
               &markers=#{@profile.latitude}%2c#{@profile.longitude}"%>
               </li>

@@ -1,3 +1,9 @@
+# Big Question :
+
+How to run rails?😂
+
+Answer: rails s
+
 ## Problem
 # Floor Coverings Retailing in Australia
 
